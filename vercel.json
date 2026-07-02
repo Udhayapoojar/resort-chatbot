@@ -1,0 +1,47 @@
+{
+  "buildCommand": "next build",
+  "installCommand": "pnpm install",
+  "framework": "nextjs",
+  "regions": ["iad1"],
+  "env": [
+    {
+      "key": "NEXT_PUBLIC_API_URL",
+      "description": "Backend API URL",
+      "value": "https://resort-chatbot-api.onrender.com"
+    },
+    {
+      "key": "NEXT_PUBLIC_FRONTEND_URL",
+      "description": "Frontend URL",
+      "value": "https://resort-chatbot.vercel.app"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/embed.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, s-maxage=3600"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Access-Control-Allow-Methods",
+          "value": "GET, OPTIONS"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/api/chat/:path*",
+      "destination": "https://resort-chatbot-api.onrender.com/api/chat/:path*"
+    },
+    {
+      "source": "/api/admin/:path*",
+      "destination": "https://resort-chatbot-api.onrender.com/api/admin/:path*"
+    }
+  ]
+}

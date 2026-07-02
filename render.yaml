@@ -1,0 +1,40 @@
+services:
+  - type: web
+    name: resort-chatbot-backend
+    runtime: node
+    region: oregon
+    plan: free
+    startCommand: node server/index.js
+    buildCommand: npm install
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3001
+      - key: MONGODB_URI
+        fromDatabase:
+          name: resort-chatbot-db
+          property: connectionString
+      - key: ADMIN_KEY
+        sync: false
+      - key: FRONTEND_URL
+        sync: false
+    autoDeploy: true
+
+  - type: web
+    name: resort-chatbot-frontend
+    runtime: node
+    region: oregon
+    buildCommand: pnpm install && pnpm run build
+    startCommand: pnpm start
+    envVars:
+      - key: NEXT_PUBLIC_API_URL
+        value: https://resort-chatbot-backend.onrender.com
+      - key: NEXT_PUBLIC_FRONTEND_URL
+        value: https://resort-chatbot-frontend.onrender.com
+    autoDeploy: true
+
+databases:
+  - name: resort-chatbot-db
+    plan: free
+    region: oregon
