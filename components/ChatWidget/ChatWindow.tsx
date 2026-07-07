@@ -52,7 +52,7 @@ const ROOM_CARDS: CardItem[] = [
     tags: ['Wifi', 'AC', 'Balcony', 'Breakfast Included'],
     actionLabel: 'Book Deluxe',
     actionType: 'booking',
-    actionUrl: 'https://themountviewcastle.com/booking'
+    actionUrl: 'https://themountviewcastle.com/rooms'
   },
   {
     id: 'room-2',
@@ -363,7 +363,7 @@ export default function ChatWindow({ isOpen, onClose, apiUrl }: ChatWindowProps)
                 <div className="absolute bottom-0 right-0 w-3 h-3 bg-emerald-500 rounded-full border-2 border-brand-green" />
               </div>
               <div>
-                <h3 className="font-semibold text-[15px] leading-tight tracking-wide flex items-center gap-1.5">
+                <h3 className="text-white font-semibold text-[15px] leading-tight tracking-wide flex items-center gap-1.5">
                   Mount View Castle
                   <Sparkles size={13} className="text-brand-gold animate-pulse" />
                 </h3>
@@ -375,7 +375,7 @@ export default function ChatWindow({ isOpen, onClose, apiUrl }: ChatWindowProps)
 
             <div className="flex items-center gap-2">
               <a
-                href="tel:+919876543210"
+                href="tel:+919486428654"
                 className="p-1.5 rounded-full hover:bg-white/10 text-brand-gold transition-colors"
                 title="Call Desk"
               >
@@ -392,7 +392,7 @@ export default function ChatWindow({ isOpen, onClose, apiUrl }: ChatWindowProps)
           </div>
 
           {/* Messages Area */}
-          <div className="flex-1 overflow-y-auto p-4 bg-gradient-to-b from-[#f9faf9] to-white flex flex-col gap-4">
+          <div className="text-white flex-1 overflow-y-auto p-4 bg-gradient-to-b from-[#f9faf9] to-white flex flex-col gap-4">
             {messages.map((message) => (
               <div key={message.id} className="flex flex-col gap-1.5">
                 {/* Single Bubble */}
