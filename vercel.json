@@ -3,18 +3,6 @@
   "installCommand": "pnpm install",
   "framework": "nextjs",
   "regions": ["iad1"],
-  "env": [
-    {
-      "key": "NEXT_PUBLIC_API_URL",
-      "description": "Backend API URL",
-      "value": "https://resort-chatbot-api.onrender.com"
-    },
-    {
-      "key": "NEXT_PUBLIC_FRONTEND_URL",
-      "description": "Frontend URL",
-      "value": "https://resort-chatbot.vercel.app"
-    }
-  ],
   "headers": [
     {
       "source": "/embed.js",
