@@ -1,8 +1,6 @@
 {
-  "buildCommand": "next build",
-  "installCommand": "pnpm install",
   "framework": "nextjs",
-  "regions": ["iad1"],
+
   "headers": [
     {
       "source": "/embed.js",
@@ -22,14 +20,15 @@
       ]
     }
   ],
+
   "rewrites": [
     {
       "source": "/api/chat/:path*",
-      "destination": "https://resort-chatbot-api.onrender.com/api/chat/:path*"
+      "destination": "https://mountview-chatbot-api.onrender.com/api/chat/:path*"
     },
     {
       "source": "/api/admin/:path*",
-      "destination": "https://resort-chatbot-api.onrender.com/api/admin/:path*"
+      "destination": "https://mountview-chatbot-api.onrender.com/api/admin/:path*"
     }
   ]
 }
