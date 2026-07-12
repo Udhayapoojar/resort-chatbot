@@ -64,8 +64,8 @@ export default function EmbedDemo() {
             <h2>Configuration Options</h2>
             <pre style={{ background: '#f0f0f0', padding: '20px', borderRadius: '4px', overflow: 'auto' }}>
 {`{
-  apiUrl: 'https://your-backend-api.com',    // Backend API URL
-  frontendUrl: 'https://your-frontend.com',  // Frontend URL
+  apiUrl: 'https://mountview-chatbot-api.onrender.com',    // Backend API URL
+  frontendUrl: 'https://resort-chatbot-swart.vercel.app',  // Frontend URL
   position: 'bottom-right',                   // 'bottom-right' or 'bottom-left'
   widgetId: 'resort-chatbot'                  // Widget container ID
 }`}

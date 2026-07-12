@@ -9,7 +9,7 @@ interface ChatWidgetProps {
   apiUrl?: string;
 }
 
-export default function ChatWidget({ apiUrl = 'http://localhost:3001' }: ChatWidgetProps) {
+export default function ChatWidget({ apiUrl = 'https://mountview-chatbot-api.onrender.com' }: ChatWidgetProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (

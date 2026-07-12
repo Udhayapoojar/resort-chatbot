@@ -80,8 +80,8 @@ export default function Page() {
               <p className="text-sm font-mono mb-3 text-gray-400"># Add to your website</p>
               <pre className="text-xs font-mono">{`<script>
   window.ResortChatbotConfig = {
-    apiUrl: 'https://api.example.com',
-    frontendUrl: 'https://chat.example.com'
+    apiUrl: 'https://mountview-chatbot-api.onrender.com',
+    frontendUrl: 'https://resort-chatbot-swart.vercel.app'
   };
   
   const script = document.createElement('script');

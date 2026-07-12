@@ -28,8 +28,8 @@
 
   const ResortChatbot = {
     config: {
-      apiUrl: 'http://localhost:5000',
-      frontendUrl: 'http://localhost:3000',
+      apiUrl: 'https://mountview-chatbot-api.onrender.com',
+      frontendUrl: 'https://resort-chatbot-swart.vercel.app',
       widgetId: 'resort-chatbot',
       position: 'bottom-right',
     },
