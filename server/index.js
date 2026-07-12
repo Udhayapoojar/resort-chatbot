@@ -17,8 +17,9 @@ const NODE_ENV = process.env.NODE_ENV || 'development';
 const allowedOrigins = [
   "http://localhost:3000",
   "http://localhost:5000",
+  "https://resort-chatbot-swart.vercel.app",
   process.env.FRONTEND_URL,
-];
+].filter(Boolean).map(url => url.trim().replace(/\/$/, ""));
 
 app.use(
   cors({
@@ -26,11 +27,13 @@ app.use(
       // Allow Postman and server-to-server requests
       if (!origin) return callback(null, true);
 
-      if (allowedOrigins.includes(origin)) {
+      const normalizedOrigin = origin.trim().replace(/\/$/, "");
+      if (allowedOrigins.includes(normalizedOrigin)) {
         return callback(null, true);
       }
 
-      return callback(new Error("Not allowed by CORS"));
+      // Gracefully deny origin instead of throwing an error which triggers Express 500 handler
+      return callback(null, false);
     },
     credentials: true,
   })
